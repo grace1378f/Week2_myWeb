@@ -1,23 +1,249 @@
-$color: #00cc99;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500;1,700;1,900&display=swap');
+
+$color-white: #FFFFFF;
+$color-black: #000000;
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline; 
+}
+/* HTML5 display-role reset for older browsers */
+img, article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1.5;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 24px;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}//css reset end
+
 
 .header {
-  height: 200px;
-  background-color: #00cc99;
+  width: 100%;
+  height: 0;
 }
 
 .footer {
-  height: 200px;
-  background-color: #00cc99;
+  width: 100%;
+  height: 310px;
+  background-color:$color-black;
+  color: $color-white;
+  padding: 64px 0;
+  font-weight: 500;
+  ul{
+    li{
+      padding-top: 16px;
+    }
+  } 
 }
 
-.box {
-  width: 100px;
-  height: 100px;
-  background-color: red;
+.cont-ctr{
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.d-flex{
   display: flex;
-  transition: all 0.5s;
-  &:hover {
-    width: 200px;
-    background-color: $color;
+  justify-content: center;
+  align-items: center;
+}
+
+h1{
+  font-size: 80px;
+  font-weight: 900;
+  font-style: italic;
+  color: $color-white;
+}
+
+h2{
+  font-size: 64px;
+  font-style: italic; 
+}
+a{
+  color: $color-white;
+  text-decoration:none;
+  transition: 0.4s;
+  &:hover{
+    color: #891818;
+    transition: 0.4s;
+  }
+}
+
+section{
+  padding: 56px 0;
+}
+
+.Cover{
+  width: 100%;
+  height: 100vh;
+  background-image: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/week2/banner.png?raw=true);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  .cover-text{
+    width: 320px;
+    margin: 0 auto;
+    p{
+      color: $color-white;
+      font-weight: 700;
+      text-align: left;
+      padding: 0 10px;
+    }
+  }
+  .follow{
+    width: 100%;
+    margin-top: 30px;
+    a{
+      img{
+        transition: 0.4s;
+        &:hover{
+          filter: brightness(.8);
+          transition: 0.4s;
+        }
+      }
+    }
+  }
+  .d-flex{
+    justify-content: space-around;
+  }
+}
+
+.About{
+  .cont-ctr{
+    img{
+      margin: 0 auto;
+      padding-top: 40px;
+    }
+    ul{
+      margin: 0 auto;
+      width: 420px;
+    }
+    .basic_info{
+      border-bottom: 1px solid $color-black;
+      padding: 20px 0 24px 0;
+    }
+    .exper{
+      li{
+        padding-top: 28px;
+        font-weight: 700;
+        &:before{
+          content: "";
+          width:20px;
+          height:20px;
+          border-radius: 50%;
+          background:#891818;
+          display: inline-block;
+          margin-right: 16px;
+        }
+
+
+      }
+    }
+  }
+  
+
+}
+
+.MyBrand{
+  background-color: $color-black;
+  .cont-ctr{
+    h2, h3, p{
+      color:$color-white;
+    }
+    h3{
+      padding-top: 12px;
+    }
+    p{
+      font-size: 20px;
+      padding-top: 32px;
+    }
+    ul{
+      padding-top: 28px;
+      margin-bottom: 104px;
+      li{
+        padding-top: 40px;
+      }
+
+    }
+    .d-flex{
+      justify-content: space-around;//問：中間距離不夠
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.OtherWorks{
+  .cont-ctr{
+    p{
+      font-size: 20px;
+      padding-top: 16px;
+    }
+    .d-flex{
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    ul{
+      margin: 8px 0 88px 0 ;
+      li{
+        padding-top: 48px;     
+        a{
+          color: $color-black;
+          transition: 0.4s;
+          &:hover{
+            cursor: pointer;
+            color: #891818; 
+            transition: 0.4s;
+            img{
+              filter: brightness(.6);
+              transition: 0.4s;
+            }
+          }
+        }
+      }
+    }
   }
 }
